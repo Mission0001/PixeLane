@@ -1,0 +1,9 @@
+problem: 
+Parsing error: Cannot find module '@babel/preset-env' Require stack: - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\core\lib\config\files\plugins.js - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\core\lib\config\files\index.js - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\core\lib\index.js - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\eslint-parser\lib\worker\babel-core.cjs - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\eslint-parser\lib\worker\handle-message.cjs - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\eslint-parser\lib\client.cjs - C:\Users\missi\Desktop\shareme\server\node_modules\@babel\eslint-parser\lib\index.cjs - C:\Users\missi\Desktop\shareme\server\node_modules\@eslint\eslintrc\dist\eslintrc.cjs Make sure that all the Babel plugins and presets you are using are defined as dependencies or devDependencies in your package.json file. It's possible that the missing plugin is loaded by a preset you are using that forgot to add the plugin to its dependencies: you can workaround this problem by explicitly adding the missing package to your top-level package.json.
+
+solution: 
+I was having the same issue with ReactJS project built using Sanity. I added the below code to .eslintrc
+
+{
+  "extends": ["@sanity/eslint-config-studio", "@babel/core"]
+}
